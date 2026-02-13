@@ -1,0 +1,43 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T05:32:00.293Z",
+  "summary": "REQ-28 is largely implemented via new export scripts that generate a deterministic ZIP (frontend/export/project-source.zip) while excluding common dependency/build folders and printing the output path. However, the diff does not clearly show a single documented repo-root command (e.g., npm script or root-level wrapper), and the scripts include emoji symbols in console output which may violate the English-only user-facing text constraint.",
+  "missing_requirements": [
+    {
+      "id": "REQ-28",
+      "requirement": "A single command is documented and available (e.g., via an npm script or shell script) that produces a .zip file from the repository root.",
+      "reason": "While export scripts and a doc were added under frontend/, the diff does not show a repository-root level command (e.g., package.json script or root-level script) nor clearly shows the documented one-command invocation from the repo root due to the documentation being truncated and located in frontend/.",
+      "evidence": [
+        "frontend/EXPORT_PROJECT.md",
+        "frontend/scripts/export-project.sh",
+        "frontend/scripts/export_project.py"
+      ]
+    },
+    {
+      "requirement": "Use English for any user-facing text.",
+      "reason": "The export scripts print emoji characters (e.g., 📦, 🚀, ❌, ✅) in user-facing console output; this may violate the English-only constraint.",
+      "evidence": [
+        "frontend/scripts/export_project.py",
+        "frontend/scripts/export-project.sh"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Updates to project metadata describing many NGO ERP features unrelated to the requested ZIP export command.",
+      "reason": "The BuildRequest is narrowly about adding a repo-level export-to-ZIP command; modifying project_state.json to include/describe numerous ERP features is not requested and conflicts with the non-goal of adding new NGO ERP product features.",
+      "evidence": [
+        "project_state.json"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/EXPORT_PROJECT.md",
+    "frontend/scripts/export-project.sh",
+    "frontend/scripts/export_project.py",
+    "project_state.json"
+  ]
+}

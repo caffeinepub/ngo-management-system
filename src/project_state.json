@@ -1,0 +1,304 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Web-based NGO Management (ERP) System with admin panel, member dashboard, online donations, automated document/certificate generation with QR verification, crowdfunding/campaigns, beneficiaries, projects/events/internships, expenses/receipts, reports, and notifications with role-based access.",
+  "architectural_notes": [
+    "Recommended stack options: React/Angular frontend; Node.js/Laravel/Django backend; MySQL/PostgreSQL database",
+    "System is web-based with admin panel + member dashboard",
+    "Security requirements: role-based access control, data encryption, secure payment processing, QR verification"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-role-based-access-control-with-three-user-types-admin-member-visitor-and-protect-routes-features-accordingly-admin-panel-member-dashboard-public-visitor-pages",
+      "title": "Implement role-based access control with three user types (Admin, Member, Visitor) and protect routes/features accordingly (admin panel, member dashboard, public visitor pages).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-dashboard-that-displays-at-minimum-total-members-total-donations-active-campaigns-financial-summary-income-vs-expenses-pending-certificates-and-basic-analytics-charts-cards",
+      "title": "Create an Admin dashboard that displays at minimum: total members, total donations, active campaigns, financial summary (income vs expenses), pending certificates, and basic analytics charts/cards.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-membership-management-module-with-member-registration-and-profile-management-including-the-specified-fields-auto-generated-member-id-name-dob-gender-mobile-email-address-photo-designation-referral-id-joining-date-status",
+      "title": "Build Membership Management module with member registration and profile management including the specified fields (auto-generated Member ID, name, DOB, gender, mobile, email, address, photo, designation, referral ID, joining date, status).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-member-user-control-actions-for-admins-block-unblock-and-deactivate-members-enforce-these-states-at-login-session-and-during-access-to-member-only-features",
+      "title": "Add member user control actions for Admins: block, unblock, and deactivate members; enforce these states at login/session and during access to member-only features.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-referral-system-generate-a-unique-referral-link-for-each-member-track-referral-counts-track-donation-referral-attribution-and-provide-an-admin-view-showing-who-referred-whom-plus-total-referrals-and-total-referral-donations",
+      "title": "Implement Referral System: generate a unique referral link for each member, track referral counts, track donation referral attribution, and provide an admin view showing who referred whom plus total referrals and total referral donations.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-birthday-wish-system-show-a-birthday-message-on-the-member-dashboard-when-it-is-the-member-s-birthday-also-generate-an-email-notification-payload-for-birthday-wishes-without-requiring-direct-email-sending-from-the-app",
+      "title": "Implement Birthday Wish System: show a birthday message on the member dashboard when it is the member’s birthday; also generate an email notification payload for birthday wishes (without requiring direct email sending from the app).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-donation-management-module-supporting-creation-and-tracking-of-donations-with-the-specified-donation-types-and-fields-donor-name-optional-member-id-amount-payment-mode-transaction-id-date-campaign-id-receipt-number",
+      "title": "Build Donation Management module supporting creation and tracking of donations with the specified donation types and fields (donor name, optional member ID, amount, payment mode, transaction ID, date, campaign ID, receipt number).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-donation-receipt-generation-generate-a-receipt-with-a-qr-code-allow-downloading-as-pdf-and-generate-an-email-receipt-payload-without-requiring-direct-email-sending-from-the-app",
+      "title": "Implement donation receipt generation: generate a receipt with a QR code, allow downloading as PDF, and generate an email receipt payload (without requiring direct email sending from the app).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-payment-gateway-configuration-management-in-admin-for-razorpay-phonepe-and-payu-enable-disable-per-gateway-and-capture-display-payment-status-for-online-donations",
+      "title": "Add Payment Gateway configuration management in Admin for Razorpay, PhonePe, and PayU: enable/disable per gateway and capture/display payment status for online donations.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-certificate-management-module-supporting-membership-certificate-achievement-certificate-visitor-certificate-internship-completion-certificate-include-required-fields-certificate-id-recipient-name-issue-date-type-qr-code-template-id-and-admin-record-storage",
+      "title": "Build Certificate Management module supporting: membership certificate, achievement certificate, visitor certificate, internship completion certificate; include required fields (certificate ID, recipient name, issue date, type, QR code, template ID) and admin record storage.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-at-least-6-visually-distinct-certificate-template-options-and-allow-admins-to-select-a-template-per-certificate-render-certificates-in-a-printable-downloadable-pdf-format",
+      "title": "Provide at least 6 visually distinct certificate template options and allow Admins to select a template per certificate; render certificates in a printable/downloadable PDF format.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-qr-verification-pages-for-certificates-receipts-scanning-or-visiting-the-qr-url-should-show-verification-status-and-key-details-e-g-certificate-receipt-id-recipient-donor-name-issue-date-type",
+      "title": "Implement QR verification pages for certificates/receipts: scanning or visiting the QR URL should show verification status and key details (e.g., certificate/receipt ID, recipient/donor name, issue/date, type).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-beneficiary-management-module-with-fields-beneficiary-id-name-address-contact-details-help-type-help-history-documents-and-features-add-edit-delete-assistance-history-quick-search-filter-report-generation-secure-storage",
+      "title": "Build Beneficiary Management module with fields (beneficiary ID, name, address, contact details, help type, help history, documents) and features (add/edit/delete, assistance history, quick search/filter, report generation, secure storage).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-crowdfunding-campaign-management-module-create-update-campaigns-with-fields-title-description-goal-amount-start-end-date-amount-raised-status-show-progress-bars-track-donor-contributions-support-multiple-campaigns-and-provide-campaign-analytics",
+      "title": "Build Crowdfunding/Campaign Management module: create/update campaigns with fields (title, description, goal amount, start/end date, amount raised, status), show progress bars, track donor contributions, support multiple campaigns, and provide campaign analytics.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-news-activity-modules-allow-admins-to-add-edit-delete-news-items-and-activity-posts-activity-posts-must-support-uploading-photos-with-captions-and-display-a-scrolling-feed-on-public-pages-and-member-dashboard",
+      "title": "Build News & Activity modules: allow Admins to add/edit/delete news items and activity posts; activity posts must support uploading photos with captions and display a scrolling feed on public pages and member dashboard.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-enquiry-management-module-store-enquiries-allow-admin-replies-track-enquiry-records-enable-search-filter-and-generate-an-auto-response-email-payload-for-new-enquiries",
+      "title": "Build Enquiry Management module: store enquiries, allow admin replies, track enquiry records, enable search/filter, and generate an auto-response email payload for new enquiries.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-project-management-module-create-projects-track-funds-received-and-expenses-per-project-and-show-transparency-views-reports-that-reconcile-donations-vs-spending",
+      "title": "Build Project Management module: create projects, track funds received and expenses per project, and show transparency views/reports that reconcile donations vs spending.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-event-management-module-create-events-allow-online-registration-support-paid-event-fee-collection-entries-participant-tracking-and-data-storage",
+      "title": "Build Event Management module: create events, allow online registration, support paid event fee collection entries, participant tracking, and data storage.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-internship-management-module-create-internship-programs-accept-online-applications-maintain-application-records-and-generate-internship-completion-certificates-with-qr-verification-for-approved-completions",
+      "title": "Build Internship Management module: create internship programs, accept online applications, maintain application records, and generate internship completion certificates (with QR verification) for approved completions.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-expense-management-module-record-expenses-with-category-date-purpose-optional-project-linkage-and-generate-income-vs-expense-reporting-with-pdf-export",
+      "title": "Build Expense Management module: record expenses with category, date, purpose, optional project linkage, and generate income vs expense reporting with PDF export.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-designation-management-admin-can-create-designations-assign-membership-fees-per-designation-allow-selecting-designation-during-registration-and-generate-designation-wise-reports",
+      "title": "Build Designation Management: Admin can create designations, assign membership fees per designation, allow selecting designation during registration, and generate designation-wise reports.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-receipt-management-storage-for-membership-receipts-donation-receipts-event-payment-receipts-and-cash-donation-receipts-provide-list-search-and-receipt-detail-views",
+      "title": "Implement Receipt Management storage for: membership receipts, donation receipts, event payment receipts, and cash donation receipts; provide list/search and receipt detail views.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-reports-management-provide-reports-for-membership-payments-donations-event-payments-active-members-inactive-members-and-expenses-support-filtering-by-date-and-search-export-reports-to-pdf",
+      "title": "Build Reports Management: provide reports for membership payments, donations, event payments, active members, inactive members, and expenses; support filtering by date and search; export reports to PDF.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-notification-system-with-dashboard-notifications-announcements-alerts-messages-and-generate-email-notification-payloads-for-registration-confirmation-donation-receipts-certificate-issue-birthday-wishes-and-campaign-updates",
+      "title": "Implement a Notification System with dashboard notifications (announcements, alerts, messages) and generate email notification payloads for registration confirmation, donation receipts, certificate issue, birthday wishes, and campaign updates.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-modern-visual-theme-across-the-entire-app-public-pages-admin-panel-member-dashboard-with-consistent-typography-spacing-and-components-avoid-a-blue-purple-primary-palette",
+      "title": "Apply a cohesive, modern visual theme across the entire app (public pages, admin panel, member dashboard) with consistent typography, spacing, and components; avoid a blue/purple primary palette.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-image-assets-to-the-frontend-and-use-them-in-the-ui-e-g-logo-in-header-login-hero-image-on-public-landing-page-store-them-under-frontend-public-assets-generated-and-reference-them-directly-from-the-frontend",
+      "title": "Add generated static image assets to the frontend and use them in the UI (e.g., logo in header/login, hero image on public landing page). Store them under frontend/public/assets/generated and reference them directly from the frontend.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-repository-level-export-command-that-packages-the-entire-project-source-code-frontend-backend-into-a-downloadable-zip-archive-excluding-build-artifacts-and-dependency-folders",
+      "title": "Add a repository-level export command that packages the entire project source code (frontend + backend) into a downloadable ZIP archive, excluding build artifacts and dependency folders.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "User roles & access control (Admin, Members, Visitors) with user management (block/unblock/deactivate)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Membership Management module: registration, member profiles, designation selection, referral tracking, birthday wishes, member dashboard",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Automated document & certificate generation with QR codes (ID card, appointment letter, membership/achievement/internship/visitor certificates) + templates & QR verification",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Donation Management module: online/offline donation capture, receipts (QR + PDF), email delivery, campaign linkage, gateway integrations (Razorpay/PhonePe/PayU) with enable/disable and payment status tracking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Crowdfunding/Campaigns module: campaign CRUD, goal/raised tracking, progress display, donor tracking, analytics, auto 80G receipt emails",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Beneficiary Management module: beneficiary records, help history, documents, search/filter, reporting, secure storage",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Projects & Events modules: project fund/expense transparency and reporting; event creation, online registration, paid fee collection, participant tracking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Internship Management module: program setup, online applications, completion certificates, record keeping",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Expenses, Receipts & Financial transparency tools: expense categories, income vs expense reports, PDF export, store membership/donation/event/cash receipts",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Reports, News/Activity posts, Enquiry management, and Notification system (email + dashboard alerts)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-35",
+      "summary": "Implement core backend data models and persistence for: users/members, donations, certificates, campaigns, beneficiaries, events, expenses, enquiries, news, activity posts, and notifications; ensure fast retrieval with list endpoints supporting pagination and basic filtering.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "NGO Management System",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

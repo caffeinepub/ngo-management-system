@@ -1,0 +1,34 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "One-command source export ZIP (frontend-driven script)",
+  "requirements": [
+    {
+      "id": "REQ-28",
+      "summary": "Provide a single repo-level command (via a frontend-hosted script) that exports the full project source (frontend + backend) into a deterministic ZIP, excluding dependency and build artifact folders.",
+      "acceptanceCriteria": [
+        "A single command is documented and available (e.g., via an npm script or shell script) that produces a .zip file containing the project source code.",
+        "The ZIP archive includes the backend and frontend source directories and any required configuration files needed to rebuild the project.",
+        "The ZIP archive excludes at minimum: node_modules/, .dfx/, dist/build output folders, and .git/ (if present).",
+        "The generated ZIP filename and output location are deterministic (same name and folder each time), and the command prints the output path on completion."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/scripts/export_project.py",
+          "operation": "create",
+          "description": "Create a Python-based export utility that zips the entire repository source (including ../backend and ../frontend when invoked from the script location), writes to a deterministic path (e.g., frontend/export/project-source.zip), excludes dependency/build/artifact folders (node_modules/, .dfx/, dist/, build/, .git/), and prints the final ZIP output path on success."
+        },
+        {
+          "path": "frontend/scripts/export-project.sh",
+          "operation": "create",
+          "description": "Create a shell wrapper command that can be run from the repository root (e.g., bash frontend/scripts/export-project.sh), resolves the repo root reliably, invokes frontend/scripts/export_project.py, ensures the output directory exists, and echoes the deterministic ZIP output path upon completion."
+        },
+        {
+          "path": "frontend/EXPORT_PROJECT.md",
+          "operation": "create",
+          "description": "Document the single command to generate the ZIP export, the deterministic output location/filename, and the exclusion rules (node_modules/, .dfx/, dist/build output, .git/). Ensure all user-facing text is in English."
+        }
+      ]
+    }
+  ]
+}

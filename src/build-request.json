@@ -1,0 +1,50 @@
+{
+  "kind": "build_request",
+  "title": "Add one-command export of the full project as a ZIP archive",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-28",
+      "text": "Add a repository-level export command that packages the entire project source code (frontend + backend) into a downloadable ZIP archive, excluding build artifacts and dependency folders.",
+      "target": "unknown",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "can you give me all codes files in zip",
+          "yes please prepare"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A single command is documented and available (e.g., via an npm script or shell script) that produces a .zip file containing the project source code.",
+        "The ZIP archive includes the backend and frontend source directories and any required configuration files needed to rebuild the project.",
+        "The ZIP archive excludes at minimum: node_modules/, .dfx/, dist/build output folders, and .git/ (if present).",
+        "The generated ZIP filename and output location are deterministic (same name and folder each time), and the command prints the output path on completion."
+      ]
+    }
+  ],
+  "constraints": [
+    "Keep all Motoko logic within the existing single-actor backend (backend/main.mo); do not introduce additional backend services.",
+    "Do not modify files under frontend/src/components/ui, frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx (these paths are immutable).",
+    "Use English for any user-facing text."
+  ],
+  "nonGoals": [
+    "Adding any new NGO ERP product features (dashboards, modules, reports, etc.).",
+    "Implementing any runtime in-app feature for end-users to download the code ZIP from the deployed application UI."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}
